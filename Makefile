@@ -54,22 +54,22 @@
 #
 #
 # exampledir
-# Åb
-# Ñ• Makefile (this file)
-# Åb
-# Ñ• make_temp/ (temporary directory for make)
-# Åb
-# Ñ•  *.cpp
-# Åb
-# Ñ• source/
-# Åb  Åb
-# Ñ†  Ñ• *.cpp
-# Åb  Åb
-# Åb  Ñ§ SubDir1
-# Ñ†      Ñ†
-# Ñ†      Ñ§ *.cpp
-# Åb
-# Ñ§ exe (executable file)
+#  |
+#  + Makefile (this file)
+#  |
+#  + make_temp/ (temporary directory for make)
+#  |
+#  +  *.cpp
+#  |
+#  + source/
+#  |   |
+#  |   + *.cpp
+#  |   |
+#  |   + SubDir1
+#  |       |
+#  |       + *.cpp
+#  |
+#  + exe (executable file)
 
 # .o: Objects file
 # .d: Depends file
