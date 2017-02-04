@@ -86,7 +86,10 @@ TARGET = exe
 # TARGET = $(shell basename `readlink -f .`).exe
 
 # コンパイルオプション
-# 例: CFLAGS  = -L/home/usr/lib -I/home/usr/include
+# 例: CFLAGS += -L/home/usr/lib -I/home/usr/include
+# 例: CFLAGS += -lssl -lcrypto	# OpenSSL
+# 例: CFLAGS += -pthread		# thread
+# 例: CFLAGS += -std=gnu++0x	# C++11
 CFLAGS += -Wall -O3
 
 #=====================================================================================================================
