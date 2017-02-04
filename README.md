@@ -6,7 +6,7 @@ Generic Makefile for C++
 02. SRCDIR，および，CFLAGS を設定する．  
     例:   
 ```
-      SRCDIR  = \*.cpp source/\*.cpp
+      SRCDIR  = *.cpp source/*.cpp
       CFLAGS  = -L/home/usr/lib -I/home/usr/include
       CFLAGS += -Wall -O3
 ```
