@@ -1,54 +1,54 @@
-/* -*- coding: utf-8 -*- */
-/*
- *  Developer name : ADMIS_Walker
- *  Blog           : https://admiswalker.blogspot.jp/
- *  Profile        : https://admiswalker.blogspot.jp/p/profile.html
- *
- *
- *  The MIT License (MIT)
- *  
- *  Copyright (c) 2017 ADMIS_Walker
- *  
- *  Permission is hereby granted, free of charge, to any person obtaining a copy
- *  of this software and associated documentation files (the "Software"), to deal
- *  in the Software without restriction, including without limitation the rights
- *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- *  copies of the Software, and to permit persons to whom the Software is
- *  furnished to do so, subject to the following conditions:
- *  
- *  The above copyright notice and this permission notice shall be included in
- *  all copies or substantial portions of the Software.
- *  
- *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- *  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- *  THE SOFTWARE.
- *
- *
- *  日本語訳
- *  
- *  The MIT License
- *  Copyright (c) 2017 ADMIS_Walker
- *  
- *  以下に定める条件に従い，本ソフトウェアおよび関連文書のファイル
- *  （以下「ソフトウェア」）の複製を取得するすべての人に対し，ソフトウェアを無制限
- *  に扱うことを無償で許可します．これには，ソフトウェアの複製を使用，複写，変更，
- *  結合，掲載，頒布，サブライセンス，および/または販売する権利，およびソフトウェア
- *  を提供する相手に同じことを許可する権利も無制限に含まれます．
- *  
- *  上記の著作権表示および本許諾表示を，ソフトウェアのすべての複製または重要な部分
- *  に記載するものとします．
- *  
- *  ソフトウェアは「現状のまま」で，明示であるか暗黙であるかを問わず，何らの保証も
- *  なく提供されます．ここでいう保証とは，商品性，特定の目的への適合性，および権利
- *  非侵害についての保証も含みますが，それに限定されるものではありません． 作者また
- *  は著作権者は，契約行為，不法行為，またはそれ以外であろうと，ソフトウェアに起因
- *  または関連し，あるいはソフトウェアの使用またはその他の扱いによって生じる一切の
- *  請求，損害，その他の義務について何らの責任も負わないものとします．
- */
+#/* -*- coding: utf-8 -*- */
+#
+#  Developer name : ADMIS_Walker
+#  Blog           : https://admiswalker.blogspot.jp/
+#  Profile        : https://admiswalker.blogspot.jp/p/profile.html
+#
+#
+#  The MIT License (MIT)
+#  
+#  Copyright (c) 2017 ADMIS_Walker
+#  
+#  Permission is hereby granted, free of charge, to any person obtaining a copy
+#  of this software and associated documentation files (the "Software"), to deal
+#  in the Software without restriction, including without limitation the rights
+#  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+#  copies of the Software, and to permit persons to whom the Software is
+#  furnished to do so, subject to the following conditions:
+#  
+#  The above copyright notice and this permission notice shall be included in
+#  all copies or substantial portions of the Software.
+#  
+#  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+#  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+#  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+#  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+#  THE SOFTWARE.
+#
+#
+#  日本語訳
+#  
+#  The MIT License
+#  Copyright (c) 2017 ADMIS_Walker
+#  
+#  以下に定める条件に従い，本ソフトウェアおよび関連文書のファイル
+#  （以下「ソフトウェア」）の複製を取得するすべての人に対し，ソフトウェアを無制限
+#  に扱うことを無償で許可します．これには，ソフトウェアの複製を使用，複写，変更，
+#  結合，掲載，頒布，サブライセンス，および/または販売する権利，およびソフトウェア
+#  を提供する相手に同じことを許可する権利も無制限に含まれます．
+#  
+#  上記の著作権表示および本許諾表示を，ソフトウェアのすべての複製または重要な部分
+#  に記載するものとします．
+#  
+#  ソフトウェアは「現状のまま」で，明示であるか暗黙であるかを問わず，何らの保証も
+#  なく提供されます．ここでいう保証とは，商品性，特定の目的への適合性，および権利
+#  非侵害についての保証も含みますが，それに限定されるものではありません． 作者また
+#  は著作権者は，契約行為，不法行為，またはそれ以外であろうと，ソフトウェアに起因
+#  または関連し，あるいはソフトウェアの使用またはその他の扱いによって生じる一切の
+#  請求，損害，その他の義務について何らの責任も負わないものとします．
+#
 
 # 想定するディレクトリ構成
 #
@@ -278,7 +278,21 @@ onece:
 #	||: 前のコマンドが失敗した場合，後のコマンドを実行する．
 #	&&: 前のコマンドが成功した場合，後のコマンドを実行する．
 #	 >: 標準出力をファイルに出力する．すでにファイルがある場合は上書きする．
+
+# 通常のコンパイル手順
 #
+# g++ -o exe main.cpp source/myprint.cpp -Wall -O3
+
+# 手動分割コンパイル手順
+#
+# g++ main.cpp -MM -o main.d ;\
+# g++ source/myprint.cpp -MM -o myprint.d ;\
+#  \
+# g++ main.cpp -c -o main.o main.d ;\
+# g++ source/myprint.cpp -c -o myprint.o myprint.d ;\
+#  \
+# g++ -o exe main.o myprint.o -Wall -O3
+
 #	参考資料: 
 #		[1] Makefile 別ディレクトリに中間ファイル & 自動依存関係設定 _ 電脳律速: http://d-rissoku.net/2013/06/makefile-%E5%88%A5%E3%83%87%E3%82%A3%E3%83%AC%E3%82%AF%E3%83%88%E3%83%AA%E3%81%AB%E4%B8%AD%E9%96%93%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB-%E8%87%AA%E5%8B%95%E4%BE%9D%E5%AD%98%E9%96%A2%E4%BF%82/
 #		[2] Makefileでワイルドカードを使う方法 - nao-bambooの日記: http://tech.chocolatoon.com/entry/2015/09/11/175832
