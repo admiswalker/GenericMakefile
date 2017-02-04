@@ -13,21 +13,21 @@ Generic Makefile for C/C++
 
 ## 想定するディレクトリ構成
 ```
- exampledir
- |
- + Makefile
- |
- + make_temp/ (temporary directory for make)
- |
- +  *.cpp
- |
- + source/
- |  |
- |  + *.cpp
- |  |
- |  └ SubDir1
- |      |
- |      + *.cpp
- |
- + exe (executable file)
+ exampledir/
+   |
+   + Makefile (this file)
+   |
+   + make_temp/ (temporary directory for make)
+   |
+   + *.cpp
+   |
+   + source/
+   |   |
+   |   + *.cpp
+   |   |
+   |   + SubDir1/
+   |       |
+   |       + *.cpp
+   |
+   + exe (executable file)
  ```
