@@ -280,5 +280,13 @@ onece:
 #	 >: 標準出力をファイルに出力する．すでにファイルがある場合は上書きする．
 #
 #	参考資料: 
-#		[1] Makeでヘッダファイルの依存関係に対応する: http://blog.wagavulin.jp/entry/20120405/1333629926
-#		[2] シェルの初歩の初歩: http://www.onetwo.jp/proginfo/pub/unix/sh.htm
+#		[1] Makefile 別ディレクトリに中間ファイル & 自動依存関係設定 _ 電脳律速: http://d-rissoku.net/2013/06/makefile-%E5%88%A5%E3%83%87%E3%82%A3%E3%83%AC%E3%82%AF%E3%83%88%E3%83%AA%E3%81%AB%E4%B8%AD%E9%96%93%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB-%E8%87%AA%E5%8B%95%E4%BE%9D%E5%AD%98%E9%96%A2%E4%BF%82/
+#		[2] Makefileでワイルドカードを使う方法 - nao-bambooの日記: http://tech.chocolatoon.com/entry/2015/09/11/175832
+#		[3] Makefileの関数 - Qiita: http://qiita.com/chibi929/items/b8c5f36434d5d3fbfa4a
+#		[4] Makeでヘッダファイルの依存関係に対応する: http://blog.wagavulin.jp/entry/20120405/1333629926
+#		[5] シンプルで応用の効くmakefileとその解説 - URIN HACK: http://urin.github.io/posts/2013/simple-makefile-for-clang/
+#
+#		[6] シェルの初歩の初歩: http://www.onetwo.jp/proginfo/pub/unix/sh.htm
+#		[7] sedコマンドの備忘録 - Qiita: http://qiita.com/takech9203/items/b96eff5773ce9d9cc9b3
+#
+#		[8] ディレクトリ構成図を書くときに便利な記号 - Qiita: http://qiita.com/paty-fakename/items/c82ed27b4070feeceff6
