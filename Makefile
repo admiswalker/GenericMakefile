@@ -86,7 +86,7 @@ TARGET = exe
 # TARGET = $(shell basename `readlink -f .`).exe
 
 # コンパイルオプション
-#CFLAGS  = -L/home/usr/lib -I/home/usr/include
+# 例: CFLAGS  = -L/home/usr/lib -I/home/usr/include
 CFLAGS += -Wall -O3
 
 #=====================================================================================================================
