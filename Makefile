@@ -53,7 +53,7 @@
 # 想定するディレクトリ構成
 #
 #
-# exampledir
+# exampledir/
 #   |
 #   + Makefile (this file)
 #   |
@@ -65,7 +65,7 @@
 #   |   |
 #   |   +  *.cpp
 #   |   |
-#   |   + SubDir1
+#   |   + SubDir1/
 #   |       |
 #   |       +  *.cpp
 #   |
