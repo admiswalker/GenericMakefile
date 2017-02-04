@@ -1,5 +1,5 @@
 # GenericMakefile
-Generic Makefile for C++
+Generic Makefile for C/C++
 
 ## 使用手順
 01. Makefile をコピーしてルートディレクトリに設置する．
