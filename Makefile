@@ -59,15 +59,15 @@
 #   |
 #   + make_temp/ (temporary directory for make)
 #   |
-#   +  *.cpp
+#   + *.cpp
 #   |
 #   + source/
 #   |   |
-#   |   +  *.cpp
+#   |   + *.cpp
 #   |   |
 #   |   + SubDir1/
 #   |       |
-#   |       +  *.cpp
+#   |       + *.cpp
 #   |
 #   + exe (executable file)
 
