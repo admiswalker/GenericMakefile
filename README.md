@@ -6,16 +6,18 @@ Generic Makefile for C/C++
 02. SRCDIR，および，CFLAGS を設定する．  
     例:   
 ```
-      SRCDIR  = *.cpp source/*.cpp
+      SRCDIR  = *.cpp source/*.cpp source/SubDir1/*.cpp
       CFLAGS  = -L/home/usr/lib -I/home/usr/include
       CFLAGS += -Wall -O3
 ```
 
-## 想定するディレクトリ構成
+## 想定するディレクトリ構成例
 ```
  exampledir/
    |
    + Makefile (this file)
+   |
+   + exe (executable file)
    |
    + make_temp/ (temporary directory for make)
    |
@@ -29,5 +31,7 @@ Generic Makefile for C/C++
    |       |
    |       + *.cpp
    |
-   + exe (executable file)
+   + include/
+       |
+       + *.hpp
  ```
