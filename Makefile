@@ -48,14 +48,15 @@
 #  は著作権者は，契約行為，不法行為，またはそれ以外であろうと，ソフトウェアに起因
 #  または関連し，あるいはソフトウェアの使用またはその他の扱いによって生じる一切の
 #  請求，損害，その他の義務について何らの責任も負わないものとします．
-#
 
-# 想定するディレクトリ構成
+# 想定するディレクトリ構成例
 #
 #
 # exampledir/
 #   |
 #   + Makefile (this file)
+#   |
+#   + exe (executable file)
 #   |
 #   + make_temp/ (temporary directory for make)
 #   |
@@ -69,15 +70,18 @@
 #   |       |
 #   |       + *.cpp
 #   |
-#   + exe (executable file)
+#   + include/
+#       |
+#       + *.hpp
 
 # .o: Objects file
 # .d: Depends file
 
 #=====================================================================================================================
+# 各項目を設定してください
 
 # ソースファイルの場所
-# 例: SRCDIR = *.cpp source/*.cpp
+# 例: SRCDIR = *.cpp source/*.cpp source/SubDir1/*.cpp
 SRCDIR = *.cpp source/*.cpp
 
 # 生成ファイル名
@@ -90,7 +94,8 @@ TARGET = exe
 # 例: CFLAGS += -lssl -lcrypto	# OpenSSL
 # 例: CFLAGS += -pthread		# thread
 # 例: CFLAGS += -std=gnu++0x	# C++11
-CFLAGS += -Wall -O3
+CFLAGS  = -Wall
+CFLAGS += -O3
 
 #=====================================================================================================================
 
@@ -109,15 +114,15 @@ $(TARGET): $(OBJS)
 	@echo ""
 	@echo "============================================================================================================"
 	@echo ""
-
+	
 	@echo "SRCS: "
 	@echo "$(SRCS)"
 	@echo ""
-
+	
 	@echo "OBJS: "
 	@echo "$(OBJS)"
 	@echo ""
-
+	
 	@echo "CFLAGS: "
 	@echo "$(CFLAGS)"
 	@echo ""
@@ -126,22 +131,43 @@ $(TARGET): $(OBJS)
 	$(CXX) -o $(TARGET) $(OBJS) $(CFLAGS)
 	@echo ""
 
+
 # 各ファイルの分割コンパイル
-#
-# $ mkdir -p make_temp/XXX/
-# $ g++ *.cpp make_temp/XXX/*.o -Wall -O3
-#
-#        $<: *.cpp
-# $(dir $@): make_temp/XXX/
-#        $@: make_temp/XXX/*.o
-#
-$(TEMP_DIR)/%.o : %.cpp
+$(TEMP_DIR)/%.o: %.cpp
 	@echo ""
 	mkdir -p $(dir $@); \
 	$(CXX) $< -c -o $@ $(CFLAGS)
 
 
-# ・ヘッダファイルの依存関係を自動的に解決する 
+# 「-include $(DEPS)」により，必要な部分のみ分割で再コンパイルを行うため，依存関係を記した *.d ファイルに生成する
+$(TEMP_DIR)/%.d: %.cpp
+	@echo ""
+	mkdir -p $(dir $@); \
+	$(CXX) $< -MM $(CFLAGS) \
+	| sed 's/$(notdir $*)\.o/$(subst /,\/,$(patsubst %.d,%.o,$@) $@)/' > $@ ; \
+	[ -s $@ ] || rm -f $@
+#	@echo $*	# for debug
+#	@echo $@	# for debug
+
+
+all: $(TARGET)
+
+
+clean:
+	-rm -rf $(TEMP_DIR) $(TARGET)
+#	-rm -f $(OBJS) $(DEPS) $(TARGET)
+
+
+onece:
+	$(CXX) -o $(TARGET) $(SRCS) $(CFLAGS)
+
+-include $(DEPS)
+
+#=====================================================================================================================
+
+# 動作メモ: 
+
+# 「-include $(DEPS)」により，必要な部分のみ分割で再コンパイルを行うため，依存関係を記した *.d ファイルに生成する
 #
 #
 #	入力: 
@@ -195,31 +221,11 @@ $(TEMP_DIR)/%.o : %.cpp
 #					$ echo "myprint_o: source/myprint.cpp source/../include/myprint.hpp" | sed "s/myprint.o/make_temp\/source\/myprint.o make_temp\/source\/myprint.d/"
 #					make_temp/source/myprint.o make_temp/source/myprint.d: source/myprint.cpp source/../include/myprint.hpp
 
-# ・コンパイル (g++ -MM) に失敗し，空の .d ファイルが生成された場合，その .d ファイルを削除する．
+# コンパイル (g++ -MM) に失敗し，空の .d ファイルが生成された場合，その .d ファイルを削除する．
 #
 #	ファイルが空かどうかを判定する．
 #		./example.txt のサイズが 0 の時 empty を表示する．(0 以外のとき，なにも表示しない) || は，前のコマンドが失敗した場合，後のコマンドを実行する命令．
 #		$ [ -s ./example.txt ]||echo "empty"
-
-$(TEMP_DIR)/%.d : %.cpp
-	@echo ""
-	mkdir -p $(dir $@); \
-	$(CXX) $< -MM $(CFLAGS) \
-	| sed 's/$(notdir $*)\.o/$(subst /,\/,$(patsubst %.d,%.o,$@) $@)/' > $@ ; \
-	[ -s $@ ] || rm -f $@
-#	@echo $*	# for debug
-#	@echo $@	# for debug
-
-all: clean $(TARGET)
-
-clean:
-	-rm -rf $(TEMP_DIR) $(TARGET)
-#	-rm -f $(OBJS) $(DEPS) $(TARGET)
-
-onece:
-	$(CXX) -o $(TARGET) $(SRCS) $(CFLAGS)
-
--include $(DEPS)
 
 
 
