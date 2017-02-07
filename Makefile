@@ -1,4 +1,4 @@
-#/* -*- coding: utf-8 -*- */
+# -*- coding: utf-8 -*-
 #
 #  Developer name : ADMIS_Walker
 #  Blog           : https://admiswalker.blogspot.jp/
