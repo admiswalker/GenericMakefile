@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+﻿# -*- coding: utf-8 -*-
 #
 #  Developer name : ADMIS_Walker
 #  Blog           : https://admiswalker.blogspot.jp/
@@ -28,28 +28,28 @@
 #  THE SOFTWARE.
 #
 #
-#  ���{���
+#  日本語訳
 #  
 #  The MIT License
 #  Copyright (c) 2017 ADMIS_Walker
 #  
-#  �ȉ��ɒ�߂�����ɏ]���C�{�\�t�g�E�F�A����ъ֘A�����̃t�@�C��
-#  �i�ȉ��u�\�t�g�E�F�A�v�j�̕������擾���邷�ׂĂ̐l�ɑ΂��C�\�t�g�E�F�A�𖳐���
-#  �Ɉ������Ƃ𖳏��ŋ����܂��D����ɂ́C�\�t�g�E�F�A�̕������g�p�C���ʁC�ύX�C
-#  �����C�f�ځC�Еz�C�T�u���C�Z���X�C�����/�܂��͔̔����錠���C����у\�t�g�E�F�A
-#  ��񋟂��鑊��ɓ������Ƃ������錠�����������Ɋ܂܂�܂��D
+#  以下に定める条件に従い，本ソフトウェアおよび関連文書のファイル
+#  （以下「ソフトウェア」）の複製を取得するすべての人に対し，ソフトウェアを無制限
+#  に扱うことを無償で許可します．これには，ソフトウェアの複製を使用，複写，変更，
+#  結合，掲載，頒布，サブライセンス，および/または販売する権利，およびソフトウェア
+#  を提供する相手に同じことを許可する権利も無制限に含まれます．
 #  
-#  ��L�̒��쌠�\������і{�����\�����C�\�t�g�E�F�A�̂��ׂĂ̕����܂��͏d�v�ȕ���
-#  �ɋL�ڂ�����̂Ƃ��܂��D
+#  上記の著作権表示および本許諾表示を，ソフトウェアのすべての複製または重要な部分
+#  に記載するものとします．
 #  
-#  �\�t�g�E�F�A�́u����̂܂܁v�ŁC�����ł��邩�Öقł��邩���킸�C����̕ۏ؂�
-#  �Ȃ��񋟂���܂��D�����ł����ۏ؂Ƃ́C���i���C����̖ړI�ւ̓K�����C����ь���
-#  ��N�Q�ɂ��Ă̕ۏ؂��܂݂܂����C����Ɍ��肳�����̂ł͂���܂���D ��҂܂�
-#  �͒��쌠�҂́C�_��s�ׁC�s�@�s�ׁC�܂��͂���ȊO�ł��낤�ƁC�\�t�g�E�F�A�ɋN��
-#  �܂��͊֘A���C���邢�̓\�t�g�E�F�A�̎g�p�܂��͂��̑��̈����ɂ���Đ������؂�
-#  �����C���Q�C���̑��̋`���ɂ��ĉ���̐ӔC������Ȃ����̂Ƃ��܂��D
+#  ソフトウェアは「現状のまま」で，明示であるか暗黙であるかを問わず，何らの保証も
+#  なく提供されます．ここでいう保証とは，商品性，特定の目的への適合性，および権利
+#  非侵害についての保証も含みますが，それに限定されるものではありません． 作者また
+#  は著作権者は，契約行為，不法行為，またはそれ以外であろうと，ソフトウェアに起因
+#  または関連し，あるいはソフトウェアの使用またはその他の扱いによって生じる一切の
+#  請求，損害，その他の義務について何らの責任も負わないものとします．
 
-# �z�肷��f�B���N�g���\����
+# 想定するディレクトリ構成例
 #
 #
 # exampledir/
@@ -78,22 +78,22 @@
 # .d: Depends file
 
 #=====================================================================================================================
-# �e���ڂ�ݒ肵�Ă�������
+# 各項目を設定してください
 
-# �\�[�X�t�@�C���̏ꏊ
-# ��: SRCDIR = *.cpp source/*.cpp source/SubDir1/*.cpp
+# ソースファイルの場所
+# 例: SRCDIR = *.cpp source/*.cpp source/SubDir1/*.cpp
 SRCDIR = *.cpp source/*.cpp
 
-# �����t�@�C����
+# 生成ファイル名
 TARGET = exe
-# �e�f�B���N�g�����ɂ���ꍇ
+# 親ディレクトリ名にする場合
 # TARGET = $(shell basename `readlink -f .`).exe
 
-# �R���p�C���I�v�V����
-# ��: CFLAGS += -L/home/usr/lib -I/home/usr/include
-# ��: CFLAGS += -lssl -lcrypto	# OpenSSL
-# ��: CFLAGS += -pthread		# thread
-# ��: CFLAGS += -std=gnu++0x	# C++11
+# コンパイルオプション
+# 例: CFLAGS += -L/home/usr/lib -I/home/usr/include
+# 例: CFLAGS += -lssl -lcrypto	# OpenSSL
+# 例: CFLAGS += -pthread		# thread
+# 例: CFLAGS += -std=gnu++0x	# C++11
 CFLAGS  = -Wall
 CFLAGS += -O3
 
@@ -103,13 +103,13 @@ SRCS   = $(wildcard $(SRCDIR))
 
 TEMP_DIR = make_temp
 OBJS     = $(addprefix $(TEMP_DIR)/, $(patsubst %.cpp, %.o, $(SRCS)))
-#OBJS     = $(addprefix $(TEMP_DIR)/, $(SRCS:%.cpp=%.o))#�ʕ\�L
+#OBJS     = $(addprefix $(TEMP_DIR)/, $(SRCS:%.cpp=%.o))#別表記
 
 DEPS  = $(addprefix $(TEMP_DIR)/, $(patsubst %.cpp, %.d, $(SRCS)))
-#DEPS  = $(addprefix $(TEMP_DIR)/, $(SRCS:%.cpp=%.d))#�ʕ\�L
+#DEPS  = $(addprefix $(TEMP_DIR)/, $(SRCS:%.cpp=%.d))#別表記
 
 
-# exe �t�@�C���̐���
+# exe ファイルの生成
 $(TARGET): $(OBJS)
 	@echo ""
 	@echo "============================================================================================================"
@@ -132,14 +132,14 @@ $(TARGET): $(OBJS)
 	@echo ""
 
 
-# �e�t�@�C���̕����R���p�C��
+# 各ファイルの分割コンパイル
 $(TEMP_DIR)/%.o: %.cpp
 	@echo ""
 	mkdir -p $(dir $@); \
 	$(CXX) $< -c -o $@ $(CFLAGS)
 
 
-# �u-include $(DEPS)�v�ɂ��C�K�v�ȕ����̂ݕ����ōăR���p�C�����s�����߁C�ˑ��֌W���L���� *.d �t�@�C���ɐ�������
+# 「-include $(DEPS)」により，必要な部分のみ分割で再コンパイルを行うため，依存関係を記した *.d ファイルに生成する
 $(TEMP_DIR)/%.d: %.cpp
 	@echo ""
 	mkdir -p $(dir $@); \
@@ -165,100 +165,100 @@ onece:
 
 #=====================================================================================================================
 
-# ���상��: 
+# 動作メモ: 
 
-# �u-include $(DEPS)�v�ɂ��C�K�v�ȕ����̂ݕ����ōăR���p�C�����s�����߁C�ˑ��֌W���L���� *.d �t�@�C���ɐ�������
+# 「-include $(DEPS)」により，必要な部分のみ分割で再コンパイルを行うため，依存関係を記した *.d ファイルに生成する
 #
 #
-#	����: 
+#	入力: 
 #			$(CXX) $< -MM $(CFLAGS)
-#		->												myprint_o: source/myprint.cpp source/../include/myprint.hpp �𓾂�D
+#		->												myprint_o: source/myprint.cpp source/../include/myprint.hpp を得る．
 #
-#	�o��: 
+#	出力: 
 #			| sed 's/$(notdir $*).o/$(subst /,\/,$(patsubst %.d,%.o,$@) $@)/'
 #		->	make_temp/source/myprint.o make_temp/source/myprint.d: source/myprint.cpp source/../include/myprint.hpp
-#			����: myprint.o �� make_temp/source/myprint.o make_temp/source/myprint.d �ɒu��
+#			操作: myprint.o を make_temp/source/myprint.o make_temp/source/myprint.d に置換
 #
-#	����̏ڍ�: 
+#	動作の詳細: 
 #			$*
 #		->	source/myprint
 #
 #			$(notdir $*).o
 #		->	myprint.o
-#			����: �f�B���N�g���łȂ������̖��O��ԋp
+#			操作: ディレクトリでない部分の名前を返却
 #
 #			$@
 #		->	make_temp/source/myprint.d
 #
 #			$(patsubst %.d,%.o,$@)
 #		->	make_temp/source/myprint.o
-#			����: .d �� .o �ɒu��
+#			操作: .d を .o に置換
 #
 #			$(patsubst %.d,%.o,$@) $@
 #		->	make_temp/source/myprint.o make_temp/source/myprint.d
 #
 #			$(subst /,\/,$(patsubst %.d,%.o,$@) $@)
 #		->	make_temp\/source\/myprint.o make_temp\/source\/myprint.d
-#			����: / �� \/ �ɒu���D(sed �ɒl��n�����߂ɁC�G�X�P�[�v����)
+#			操作: / を \/ に置換．(sed に値を渡すために，エスケープする)
 #
 #			| sed 's/$(notdir $*)\.o/$(subst /,\/,$(patsubst %.d,%.o,$@) $@)/'
 #		->	make_temp/source/myprint.o make_temp/source/myprint.d: source/myprint.cpp source/../include/myprint.hpp
-#			����: | (�p�C�v) �� $(CXX) $< -MM $(CFLAGS) �̏o�͂���͂Ƃ��Ď󂯎��D
-#				  ���� myprint.o: source/myprint.cpp source/../include/myprint.hpp �́C
-#				  myprint.o ���Cmake_temp/source/myprint.o make_temp/source/myprint.d �Œu������D
+#			操作: | (パイプ) で $(CXX) $< -MM $(CFLAGS) の出力を入力として受け取る．
+#				  入力 myprint.o: source/myprint.cpp source/../include/myprint.hpp の，
+#				  myprint.o を，make_temp/source/myprint.o make_temp/source/myprint.d で置換する．
 #
-#			�����: 
-#				�ŏ��ɏo�Ă��� aaaa �� bbbb �ɒu������D
+#			動作例: 
+#				最初に出てきた aaaa を bbbb に置換する．
 #					$ echo "aaaa" | sed -e "s/aaaa/bbbb/"
 #					bbbb
 #
 #				$ echo "myprint.o: source/myprint.cpp source/../include/myprint.hpp" | sed "s/myprint\.o/make_temp\/source\/myprint.o make_temp\/source\/myprint.d/"
 #				make_temp/source/myprint.o make_temp/source/myprint.d: source/myprint.cpp source/../include/myprint.hpp
 #
-#				�Ƃ���ŁC���L�̂悤�ɁC[.] ���G�X�P�[�v���Ȃ��ƁC[.] �����K�\���ŔC�ӂ̈ꕶ����\���̂ŁC
-#				myprint.o -> myprint_o �ƕύX���Ă����l�̏o�͂𓾂Ă��܂��D(���������āC��L�̂悤�� "\.o" �Ƃ��ăG�X�P�[�v����K�v������)
-#				��:
+#				ところで，下記のように，[.] をエスケープしないと，[.] が正規表現で任意の一文字を表すので，
+#				myprint.o -> myprint_o と変更しても同様の出力を得てしまう．(したがって，上記のように "\.o" としてエスケープする必要がある)
+#				例:
 #					$ echo "myprint_o: source/myprint.cpp source/../include/myprint.hpp" | sed "s/myprint.o/make_temp\/source\/myprint.o make_temp\/source\/myprint.d/"
 #					make_temp/source/myprint.o make_temp/source/myprint.d: source/myprint.cpp source/../include/myprint.hpp
 
-# �R���p�C�� (g++ -MM) �Ɏ��s���C��� .d �t�@�C�����������ꂽ�ꍇ�C���� .d �t�@�C�����폜����D
+# コンパイル (g++ -MM) に失敗し，空の .d ファイルが生成された場合，その .d ファイルを削除する．
 #
-#	�t�@�C�����󂩂ǂ����𔻒肷��D
-#		./example.txt �̃T�C�Y�� 0 �̎� empty ��\������D(0 �ȊO�̂Ƃ��C�Ȃɂ��\�����Ȃ�) || �́C�O�̃R�}���h�����s�����ꍇ�C��̃R�}���h�����s���閽�߁D
+#	ファイルが空かどうかを判定する．
+#		./example.txt のサイズが 0 の時 empty を表示する．(0 以外のとき，なにも表示しない) || は，前のコマンドが失敗した場合，後のコマンドを実行する命令．
 #		$ [ -s ./example.txt ]||echo "empty"
 
 
 
-# ����
+# メモ
 #
 #
-# gcc �R���p�C���I�v�V����
-#	 -c: �\�[�X�E�t�@�C���̃R���p�C���A�܂��́A�A�Z���u�����s���܂����A�����N�͍s���܂���B
-#		�����R���p�C������ۂɎg�p����D
-#	 -M: .cpp �t�@�C�����C���N���[�h����t�@�C���𒲂ׂ�D(�V�X�e���t�@�C�����܂�    )
-#	-MM: .cpp �t�@�C�����C���N���[�h����t�@�C���𒲂ׂ�D(�V�X�e���t�@�C�����܂܂Ȃ�)
+# gcc コンパイルオプション
+#	 -c: ソース・ファイルのコンパイル、または、アセンブルを行いますが、リンクは行いません。
+#		分割コンパイルする際に使用する．
+#	 -M: .cpp ファイルがインクルードするファイルを調べる．(システムファイルを含む    )
+#	-MM: .cpp ファイルがインクルードするファイルを調べる．(システムファイルを含まない)
 #
 #
-# makefile ���̃R�}���h
+# makefile 中のコマンド
 #
 #	$(addprefix PREFIX, NAMES...)
-#		NAMES �̊e�v�f�̐ړ����Ƃ��� PREFIX ��ǉ�����B
-#		�� -I �Ƃ���t����Ƃ��ȂǂɎg����B
+#		NAMES の各要素の接頭辞として PREFIX を追加する。
+#		※ -I とかを付けるときなどに使える。
 #
 #	$(patsubst PATTERN, REPLACEMENT, TEXT)
-#		TEXT ������ PATTERN �Ƀ}�b�`�������̂� REPLACEMENT �ɒu��������B
-#		�� subst �� PATTERN ���g����o�[�W�����B
+#		TEXT 内から PATTERN にマッチしたものを REPLACEMENT に置き換える。
+#		※ subst の PATTERN が使えるバージョン。
 #
 #	$(subst FROM, TO, TEXT)
-#		TEXT����FROM��TO�ɒu��������B
-#		��patsubst��PATTERN���g���Ȃ��o�[�W�����B
+#		TEXT内のFROMをTOに置き換える。
+#		※patsubstのPATTERNが使えないバージョン。
 #
 #	$(dir $@)
-#		$@ �̃f�B���N�g�������𒊏o
+#		$@ のディレクトリ部分を抽出
 #
 #	mkdir
-#		-p: �w�肵���f�B���N�g�����T�u�f�B���N�g�����ƍ쐬����B
-#		�c���[��̃f�B���N�g�����쐬�\
+#		-p: 指定したディレクトリをサブディレクトリごと作成する。
+#		ツリー状のディレクトリも作成可能
 #
 #	sed
 #		$ file_name="linux.txt"
@@ -269,47 +269,47 @@ onece:
 # $@: $^
 #	XXXXXX
 #
-#	$@: �^�[�Q�b�g��
-#	$^: �ˑ��t�@�C���̃��X�g
-#	$<: �ŏ��̈ˑ��t�@�C��
-#	$%: �^�[�Q�b�g���A�[�J�C�u�����o�������Ƃ��̃^�[�Q�b�g�����o��
-#	$?: �^�[�Q�b�g���V�������ׂĂ̈ˑ�����t�@�C����
-#	$+: Makefile�Ɠ������Ԃ̈ˑ�����t�@�C���̖��O
-#	$*: �T�t�B�b�N�X���������^�[�Q�b�g�̖��O
+#	$@: ターゲット名
+#	$^: 依存ファイルのリスト
+#	$<: 最初の依存ファイル
+#	$%: ターゲットがアーカイブメンバだったときのターゲットメンバ名
+#	$?: ターゲットより新しいすべての依存するファイル名
+#	$+: Makefileと同じ順番の依存するファイルの名前
+#	$*: サフィックスを除いたターゲットの名前
 #
 #
 # shell script
 #
-#	 &: ������s
-#	 ;: �������s
-#	 \: ���s�����R�}���h�̐ڑ�
-#	 |: �p�C�v�D�O�̃R�}���h�̕W���o�͂��C��̃R�}���h�̕W�����͂Ƃ���D
-#	||: �O�̃R�}���h�����s�����ꍇ�C��̃R�}���h�����s����D
-#	&&: �O�̃R�}���h�����������ꍇ�C��̃R�}���h�����s����D
-#	 >: �W���o�͂��t�@�C���ɏo�͂���D���łɃt�@�C��������ꍇ�͏㏑������D
+#	 &: 並列実行
+#	 ;: 逐次実行
+#	 \: 改行したコマンドの接続
+#	 |: パイプ．前のコマンドの標準出力を，後のコマンドの標準入力とする．
+#	||: 前のコマンドが失敗した場合，後のコマンドを実行する．
+#	&&: 前のコマンドが成功した場合，後のコマンドを実行する．
+#	 >: 標準出力をファイルに出力する．すでにファイルがある場合は上書きする．
 
-# �ʏ�̃R���p�C���菇
+# 通常のコンパイル手順
 #
 # g++ -o exe main.cpp source/myprint.cpp -Wall -O3
 
-# �蓮�����R���p�C���菇
+# 手動分割コンパイル手順
 #
 # g++ main.cpp -MM -o main.d ;\
 # g++ source/myprint.cpp -MM -o myprint.d ;\
 #  \
-# g++ main.cpp -c -o main.o main.d ;\
-# g++ source/myprint.cpp -c -o myprint.o myprint.d ;\
+# g++ main.cpp -c -o main.o ;\
+# g++ source/myprint.cpp -c -o myprint.o ;\
 #  \
 # g++ -o exe main.o myprint.o -Wall -O3
 
-#	�Q�l����: 
-#		[1] Makefile �ʃf�B���N�g���ɒ��ԃt�@�C�� & �����ˑ��֌W�ݒ� _ �d�]����: http://d-rissoku.net/2013/06/makefile-%E5%88%A5%E3%83%87%E3%82%A3%E3%83%AC%E3%82%AF%E3%83%88%E3%83%AA%E3%81%AB%E4%B8%AD%E9%96%93%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB-%E8%87%AA%E5%8B%95%E4%BE%9D%E5%AD%98%E9%96%A2%E4%BF%82/
-#		[2] Makefile�Ń��C���h�J�[�h���g�����@ - nao-bamboo�̓��L: http://tech.chocolatoon.com/entry/2015/09/11/175832
-#		[3] Makefile�̊֐� - Qiita: http://qiita.com/chibi929/items/b8c5f36434d5d3fbfa4a
-#		[4] Make�Ńw�b�_�t�@�C���̈ˑ��֌W�ɑΉ�����: http://blog.wagavulin.jp/entry/20120405/1333629926
-#		[5] �V���v���ŉ��p�̌���makefile�Ƃ��̉�� - URIN HACK: http://urin.github.io/posts/2013/simple-makefile-for-clang/
+#	参考資料: 
+#		[1] Makefile 別ディレクトリに中間ファイル & 自動依存関係設定 _ 電脳律速: http://d-rissoku.net/2013/06/makefile-%E5%88%A5%E3%83%87%E3%82%A3%E3%83%AC%E3%82%AF%E3%83%88%E3%83%AA%E3%81%AB%E4%B8%AD%E9%96%93%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB-%E8%87%AA%E5%8B%95%E4%BE%9D%E5%AD%98%E9%96%A2%E4%BF%82/
+#		[2] Makefileでワイルドカードを使う方法 - nao-bambooの日記: http://tech.chocolatoon.com/entry/2015/09/11/175832
+#		[3] Makefileの関数 - Qiita: http://qiita.com/chibi929/items/b8c5f36434d5d3fbfa4a
+#		[4] Makeでヘッダファイルの依存関係に対応する: http://blog.wagavulin.jp/entry/20120405/1333629926
+#		[5] シンプルで応用の効くmakefileとその解説 - URIN HACK: http://urin.github.io/posts/2013/simple-makefile-for-clang/
 #
-#		[6] �V�F���̏����̏���: http://www.onetwo.jp/proginfo/pub/unix/sh.htm
-#		[7] sed�R�}���h�̔��Y�^ - Qiita: http://qiita.com/takech9203/items/b96eff5773ce9d9cc9b3
+#		[6] シェルの初歩の初歩: http://www.onetwo.jp/proginfo/pub/unix/sh.htm
+#		[7] sedコマンドの備忘録 - Qiita: http://qiita.com/takech9203/items/b96eff5773ce9d9cc9b3
 #
-#		[8] �f�B���N�g���\���}�������Ƃ��ɕ֗��ȋL�� - Qiita: http://qiita.com/paty-fakename/items/c82ed27b4070feeceff6
+#		[8] ディレクトリ構成図を書くときに便利な記号 - Qiita: http://qiita.com/paty-fakename/items/c82ed27b4070feeceff6
