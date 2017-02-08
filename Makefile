@@ -51,7 +51,6 @@
 
 # 想定するディレクトリ構成例
 #
-#
 # exampledir/
 #   |
 #   + Makefile (this file)
@@ -150,18 +149,27 @@ $(TEMP_DIR)/%.d: %.cpp
 #	@echo $@	# for debug
 
 
-all: $(TARGET)
+.PHONY: all
+all:
+	@(make clean)
+	@(make)
+#	make clean ; \	#別表記
+#	make			#別表記
 
 
+.PHONY: clean
 clean:
 	-rm -rf $(TEMP_DIR) $(TARGET)
 #	-rm -f $(OBJS) $(DEPS) $(TARGET)
 
 
+.PHONY: onece
 onece:
 	$(CXX) -o $(TARGET) $(SRCS) $(CFLAGS)
 
+
 -include $(DEPS)
+
 
 #=====================================================================================================================
 
