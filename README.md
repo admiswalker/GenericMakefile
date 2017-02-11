@@ -2,14 +2,15 @@
 Generic Makefile for C/C++
 
 ## 使用手順
-01. Makefile をコピーしてルートディレクトリに設置する．
-02. SRCDIR，および，CFLAGS を設定する．  
+_1. Makefile をコピーしてルートディレクトリに設置する．  
+_2. SRCDIR，および，CFLAGS を設定する．  
     例:   
 ```
       SRCDIR  = *.cpp source/*.cpp source/SubDir1/*.cpp
       CFLAGS  = -L/home/usr/lib -I/home/usr/include
       CFLAGS += -Wall -O3
 ```
+_3. make する  
 
 ## 想定するディレクトリ構成例
 ```
