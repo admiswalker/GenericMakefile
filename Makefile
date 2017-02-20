@@ -184,9 +184,10 @@ steps: $(SRCS) $(HEADS) $(HEADppS)
 		FindCmd+=" ";\
 	done;\
 #	echo "$$FindCmd";\
-	find $$FindCmd | xargs wc -l
+	echo $$FindCmd | xargs wc -l
+#	find $$FindCmd | xargs wc -l
 
-#$ find . -maxdepth 1 -name "*.cpp" -o -name "*.hpp" -o -name "*.h" | xargs wc -l
+#$ find . -name "*.cpp" -o -name "*.hpp" -o -name "*.h" -maxdepth 1 | xargs wc -l
 
 -include $(DEPS)
 
@@ -342,7 +343,5 @@ steps: $(SRCS) $(HEADS) $(HEADppS)
 #
 #		[8] ディレクトリ構成図を書くときに便利な記号 - Qiita: http://qiita.com/paty-fakename/items/c82ed27b4070feeceff6
 #
-#		[9] https://github.com/T-matsuno07/mtnMakefile/blob/master/makefile
-#
-#		[10] プログラムのステップ数をカウントする方法 - nishio-dens's diary: http://nishio.hateblo.jp/entry/20101110/1289398449
-#		[11] シェル（bash）のfor文の違いを吸収するMakefileの書き方 - 檜山正幸のキマイラ飼育記: http://d.hatena.ne.jp/m-hiyama/20080724/1216874932
+#		[9] プログラムのステップ数をカウントする方法 - nishio-dens's diary: http://nishio.hateblo.jp/entry/20101110/1289398449
+#		[10] シェル（bash）のfor文の違いを吸収するMakefileの書き方 - 檜山正幸のキマイラ飼育記: http://d.hatena.ne.jp/m-hiyama/20080724/1216874932
