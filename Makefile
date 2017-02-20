@@ -186,7 +186,7 @@ steps: $(SRCS) $(HEADS) $(HEADppS)
 #	echo "$$FindCmd";\
 	find $$FindCmd | xargs wc -l
 
-#$ find . -name "*.cpp" -o -name "*.hpp" -o -name "*.h" -maxdepth 1 | xargs wc -l
+#$ find . -maxdepth 1 -name "*.cpp" -o -name "*.hpp" -o -name "*.h" | xargs wc -l
 
 -include $(DEPS)
 
