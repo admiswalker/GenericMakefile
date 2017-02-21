@@ -178,16 +178,8 @@ onece:
 
 .PHONY: steps
 steps: $(SRCS) $(HEADS) $(HEADppS)
-	@LIST="$^";\
-	for FName in $$LIST; do\
-		FindCmd+=$$FName;\
-		FindCmd+=" ";\
-	done;\
-#	echo "$$FindCmd";\
-	echo $$FindCmd | xargs wc -l
-#	find $$FindCmd | xargs wc -l
+	@echo "$^" | xargs wc -l
 
-#$ find . -name "*.cpp" -o -name "*.hpp" -o -name "*.h" -maxdepth 1 | xargs wc -l
 
 -include $(DEPS)
 
