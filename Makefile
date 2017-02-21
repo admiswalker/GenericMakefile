@@ -178,13 +178,13 @@ onece:
 
 
 .PHONY: steps
-steps: $(SRCS) $(HEADS) $(HEADppS)
+steps: $(SRCS) $(HEADppS) $(HEADS)
 	@echo "$^" | xargs wc -l
 
 
 #動作未確認[12]
 .PHONY: steps2
-steps2: $(SRCS) $(HEADS) $(HEADppS)
+steps2: $(SRCS) $(HEADppS) $(HEADS)
 	@echo "$^" | xargs grep -Ev '^[[:space:]]*((/?\*.*/?)|(//.*))$' | wc -l
 
 
