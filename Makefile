@@ -181,6 +181,12 @@ steps: $(SRCS) $(HEADS) $(HEADppS)
 	@echo "$^" | xargs wc -l
 
 
+#動作未確認[12]
+.PHONY: steps2
+steps2: $(SRCS) $(HEADS) $(HEADppS)
+	@echo "$^" | xargs grep -Ev '^[[:space:]]*((/?\*.*/?)|(//.*))$' | wc -l
+
+
 -include $(DEPS)
 
 
@@ -335,5 +341,8 @@ steps: $(SRCS) $(HEADS) $(HEADppS)
 #
 #		[8] ディレクトリ構成図を書くときに便利な記号 - Qiita: http://qiita.com/paty-fakename/items/c82ed27b4070feeceff6
 #
-#		[9] プログラムのステップ数をカウントする方法 - nishio-dens's diary: http://nishio.hateblo.jp/entry/20101110/1289398449
-#		[10] シェル（bash）のfor文の違いを吸収するMakefileの書き方 - 檜山正幸のキマイラ飼育記: http://d.hatena.ne.jp/m-hiyama/20080724/1216874932
+#		[9] https://github.com/T-matsuno07/mtnMakefile/blob/master/makefile
+#
+#		[10] プログラムのステップ数をカウントする方法 - nishio-dens's diary: http://nishio.hateblo.jp/entry/20101110/1289398449
+#		[11] シェル（bash）のfor文の違いを吸収するMakefileの書き方 - 檜山正幸のキマイラ飼育記: http://d.hatena.ne.jp/m-hiyama/20080724/1216874932
+#		[12] Javaのステップ数を数える - kumai@github: http://qiita.com/kumai@github/items/3b9e6f73d71323a1bc1d
