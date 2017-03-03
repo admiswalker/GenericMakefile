@@ -8,7 +8,7 @@ Generic Makefile for C/C++
 (Makefile 以外のファイルは，動作確認用のサンプルコードである)  
   
 ####2. SRCDIR，および，CFLAGS を設定する．
-    例:   
+例:
 ```
       SRCDIR  = *. source/*. source/SubDir1/*.
       CFLAGS  = -L/home/usr/lib -I/home/usr/include
