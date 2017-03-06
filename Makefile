@@ -183,9 +183,9 @@ steps: $(SRCS) $(HEADppS) $(HEADS)
 
 
 #動作未確認[12]
-.PHONY: steps2
-steps2: $(SRCS) $(HEADppS) $(HEADS)
-	@echo "$^" | xargs grep -Ev '^[[:space:]]*((/?\*.*/?)|(//.*))$' | wc -l
+#.PHONY: steps2
+#steps2: $(SRCS) $(HEADppS) $(HEADS)
+#	@echo "$^" | xargs grep -Ev '^[[:space:]]*((/?\*.*/?)|(//.*))$' | wc -l
 
 
 -include $(DEPS)
