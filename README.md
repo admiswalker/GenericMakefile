@@ -7,7 +7,7 @@ Generic Makefile for C/C++
 1. Makefile をコピーしてルートディレクトリに設置する．
 (Makefile 以外のファイルは，動作確認用のサンプルコードである)  
   
-2. SRCDIR，および，CFLAGS を設定する．
+2. SRCDIR，および，CFLAGS を設定する．  
 例:
 ```
       SRCDIR  = *. source/*. source/SubDir1/*.
