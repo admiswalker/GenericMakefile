@@ -48,8 +48,8 @@ TARGET = exe
 # 例: CFLAGS += -L/home/usr/lib -I/home/usr/include
 # 例: CFLAGS += -lssl -lcrypto	# OpenSSL
 # 例: CFLAGS += -pthread		# thread
-# 例: CFLAGS += -std=gnu++0x	# C++11
-CFLAGS  = -Wall
+CFLAGS += -std=c++14 # C++14
+CFLAGS += -Wall
 CFLAGS += -O3
 
 #============================================================
